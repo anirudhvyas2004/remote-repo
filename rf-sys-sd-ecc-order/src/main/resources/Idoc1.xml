@@ -1,0 +1,188 @@
+<?xml version="1.1"?>
+<SALESORDER_CREATEFROMDAT202>
+    <IDOC BEGIN="1">
+        <EDI_DC40 SEGMENT="1">
+            <TABNAM>EDI_DC40</TABNAM>
+            <MANDT>100</MANDT>
+            <DOCNUM>0000000036645006</DOCNUM>
+            <DOCREL>740</DOCREL>
+            <STATUS>30</STATUS>
+            <DIRECT>1</DIRECT>
+            <OUTMOD>2</OUTMOD>
+            <IDOCTYP>SALESORDER_CREATEFROMDAT202</IDOCTYP>
+            <MESTYP>SALESORDER_CREATEFROMDAT2</MESTYP>
+            <STDMES>SALESO</STDMES>
+            <SNDPOR>SAPEQ2</SNDPOR>
+            <SNDPRT>LS</SNDPRT>
+            <SNDPRN>EQ2CLNT100</SNDPRN>
+            <RCVPOR>MULEIO</RCVPOR>
+            <RCVPRT>LS</RCVPRT>
+            <RCVPRN>MSQAST</RCVPRN>
+            <CREDAT>20180221</CREDAT>
+            <CRETIM>144206</CRETIM>
+        </EDI_DC40>
+        <E1SALESORDER_CREATEFROMDAT2 SEGMENT="1">
+            <SALESDOCUMENTIN>SALESDOCUMENTINDATA</SALESDOCUMENTIN>
+            <E1BPSDHD1 SEGMENT="1">
+                <REFOBJKEY>2000374715</REFOBJKEY>
+                <DOC_TYPE>TA</DOC_TYPE>
+                <SALES_ORG>3010</SALES_ORG>
+                <DISTR_CHAN>10</DISTR_CHAN>
+                <DIVISION>10</DIVISION>
+                <REQ_DATE_H>00000000</REQ_DATE_H>
+                <ORD_REASON>Z27</ORD_REASON>
+                <PRICE_DATE>20180215</PRICE_DATE>
+                <REF_1_S>Boomi</REF_1_S>
+                <DOC_DATE>20180215</DOC_DATE>
+                <CURRENCY>AUD</CURRENCY>
+                <REF_DOC>refdocdata</REF_DOC>
+                <REFDOC_CAT>refdoccatdata</REFDOC_CAT>
+                <PYMT_METH>paymentmethoddata</PYMT_METH>
+                <PURCH_DATE>20160202</PURCH_DATE>
+                <INCOTERMS1>CFR</INCOTERMS1>
+                <INCOTERMS2>CHN</INCOTERMS2>
+                <PMNTTRMS>0001</PMNTTRMS>
+                <COMPL_DLV>X</COMPL_DLV>
+                <PURCH_NO_C>1234567891</PURCH_NO_C>
+                <SD_DOC_CAT>C</SD_DOC_CAT>
+                <SHIP_COND>Z1</SHIP_COND>
+                <CURR_ISO>USD</CURR_ISO>
+                <NAME>1234567890123</NAME>
+                <ALTTAX_CLS>0</ALTTAX_CLS>
+            </E1BPSDHD1>
+            <E1BPSDITM SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <MATERIAL>ENHEFG1-02</MATERIAL>
+                <PLANT>3010</PLANT>
+                <TARGET_QTY>123</TARGET_QTY>
+                <SHORT_TEXT>TEST123</SHORT_TEXT>
+                <PURCH_NO_C>1234567891</PURCH_NO_C>
+                <PURCH_DATE>20160202</PURCH_DATE>
+                <PRICE_GRP>01</PRICE_GRP>
+                <CUST_GROUP>01</CUST_GROUP>
+                <INCOTERMS1>CFR</INCOTERMS1>
+                <INCOTERMS2>CHN</INCOTERMS2>
+                <PMNTTRMS>0001</PMNTTRMS>
+                <PYMT_METH>C</PYMT_METH>
+                <S_UNIT_ISO>EA</S_UNIT_ISO>
+                <REASON_REJ>XXXX</REASON_REJ>
+            </E1BPSDITM>
+            <E1BPSDITM SEGMENT="1">
+                <ITM_NUMBER>9900</ITM_NUMBER>
+                <MATERIAL>REVTSH1</MATERIAL>
+                <PLANT>3010</PLANT>
+            </E1BPSDITM>
+            <E1BPPARNR SEGMENT="1">
+                <PARTN_ROLE>AG</PARTN_ROLE>
+                <PARTN_NUMB>0074572804</PARTN_NUMB>
+            </E1BPPARNR>
+            <E1BPPARNR SEGMENT="1">
+                <PARTN_ROLE>ZI</PARTN_ROLE>
+                <PARTN_NUMB>0000000100</PARTN_NUMB>
+            </E1BPPARNR>
+            <E1BPPARNR SEGMENT="1">
+                <PARTN_ROLE>WE</PARTN_ROLE>
+                <PARTN_NUMB>0074572804</PARTN_NUMB>
+                <NAME>Auto239545 Last239545</NAME>
+                <STREET>200 Broadway Av</STREET>
+                <COUNTR_ISO>AU</COUNTR_ISO>
+                <POSTL_CODE>5024</POSTL_CODE>
+                <CITY>WEST BEACH</CITY>
+                <DISTRICT>San Ramon</DISTRICT>
+                <REGION>ACT</REGION>
+                <LANGU_ISO>en</LANGU_ISO>
+            </E1BPPARNR>
+            <E1BPPARNR SEGMENT="1">
+                <PARTN_ROLE>RE</PARTN_ROLE>
+                <PARTN_NUMB>0074572804</PARTN_NUMB>
+                <NAME>Auto239545 Last239545</NAME>
+                <STREET>200 Broadway Av</STREET>
+                <COUNTR_ISO>AU</COUNTR_ISO>
+                <POSTL_CODE>5024</POSTL_CODE>
+                <CITY>WEST BEACH</CITY>
+                <REGION>ACT</REGION>
+            </E1BPPARNR>
+            <E1BPSCHDL SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <REQ_QTY>1</REQ_QTY>
+                <DLV_DATE>20170216</DLV_DATE>
+            </E1BPSCHDL>
+            <E1BPSCHDL SEGMENT="1">
+                <ITM_NUMBER>9900</ITM_NUMBER>
+                <REQ_QTY>1</REQ_QTY>
+                <DLV_DATE>20170216</DLV_DATE>
+            </E1BPSCHDL>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>9900</ITM_NUMBER>
+                <COND_TYPE>YSCH</COND_TYPE>
+                <COND_VALUE>12.7300</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <COND_TYPE>PR00</COND_TYPE>
+                <COND_VALUE>123.6300</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <COND_TYPE>ZTXG</COND_TYPE>
+                <COND_VALUE>12.3700</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <COND_TYPE>YVCV</COND_TYPE>
+                <COND_VALUE>92.7200</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>9900</ITM_NUMBER>
+                <COND_TYPE>ZTXG</COND_TYPE>
+                <COND_VALUE>1.2700</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCOND SEGMENT="1">
+                <ITM_NUMBER>100</ITM_NUMBER>
+                <COND_TYPE>YVQV</COND_TYPE>
+                <COND_VALUE>77.0000</COND_VALUE>
+                <CURRENCY>AUD</CURRENCY>
+            </E1BPCOND>
+            <E1BPCCARD SEGMENT="1">
+                <CC_TYPE>VISA</CC_TYPE>
+                <CC_NUMBER>474747******4747</CC_NUMBER>
+                <CC_NAME>Aumji Bhaumji</CC_NAME>
+                <CC_VALID_T>20251031</CC_VALID_T>
+                <AUTH_FLAG>X</AUTH_FLAG>
+                <AUTHAMOUNT>150.0000</AUTHAMOUNT>
+                <CURRENCY>AUD</CURRENCY>
+                <AUTH_DATE>20180215</AUTH_DATE>
+                <AUTH_CC_NO>831000</AUTH_CC_NO>
+                <AUTH_REFNO>518653166839693</AUTH_REFNO>
+                <CC_REACT>A</CC_REACT>
+                <CC_STAT_EX>C</CC_STAT_EX>
+                <AUTHORTYPE>A</AUTHORTYPE>
+            </E1BPCCARD>
+            <E1BPPAREX SEGMENT="1">
+                <STRUCTURE>BAPE_VBAK</STRUCTURE>
+                <VALUEPART1>2000374715                           20180215X                                      Y         Retail</VALUEPART1>
+            </E1BPPAREX>
+            <E1BPPAREX SEGMENT="1">
+                <STRUCTURE>BAPE_VBAKX</STRUCTURE>
+                <VALUEPART1>2000374715    XX  X XX</VALUEPART1>
+            </E1BPPAREX>
+            <E1BPPAREX SEGMENT="1">
+                <STRUCTURE>BAPE_VBAP</STRUCTURE>
+                <VALUEPART1>2000374715000100                                                                                    1</VALUEPART1>
+            </E1BPPAREX>
+            <E1BPPAREX SEGMENT="1">
+                <STRUCTURE>BAPE_VBAPX</STRUCTURE>
+                <VALUEPART1>2000374715              XX</VALUEPART1>
+            </E1BPPAREX>
+            <E1BPPAREX SEGMENT="1">
+                <STRUCTURE>BAPE_VBAP</STRUCTURE>
+                <VALUEPART1>2000374715009900                                                                                    99</VALUEPART1>
+            </E1BPPAREX>
+        </E1SALESORDER_CREATEFROMDAT2>
+    </IDOC>
+</SALESORDER_CREATEFROMDAT202>

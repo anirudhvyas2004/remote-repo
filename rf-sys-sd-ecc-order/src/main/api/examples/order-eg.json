@@ -1,0 +1,222 @@
+{
+   "idoc-control": {
+         "idoc-type": "SALESORDER_CREATEFROMDAT202",
+         "message-type": "SALESORDER_CREATEFROMDAT2",
+		 "sender-partner":{
+			"port": "MSINBD",
+			"type": "LS",
+			"number": "MSDEVT1"
+		 },
+		 "receiver-partner":{
+			"port": "SAPEQ2",
+			"type": "LS",
+			"number": "EQ2CLNT100"
+		 }
+      },
+      "order": {
+         "sales-ord-num": "2100200000",
+         "header": {
+            "obj-key": "2100200000",
+            "order-type": "TA",
+            "sales-org": "3010",
+            "distribution-channel": "10",
+            "division": "10",
+            "required-date": "20180210",
+            "reason": "Z27",
+            "price-date": "20180215",
+            "doc-date": "20180215",
+            "currency": "AUD",
+            "ref-order": "refdocdata",
+            "ref-ord-cat": "C",
+            "payment-method": "p",
+            "purchase-date": "20160202",
+            "incoterms1": "CFR",
+            "incoterms2": "CHN",
+            "payment-term": "0001",
+            "complete-delivery": true,
+            "cust-purchase-order": "1234567891",
+            "doc-cat": "C",
+            "shipping-cond": "Z1",
+            "cust-name": "1234567890123",
+            "alt-tax-classification": "0",
+			"commission-date": "20180502",
+			"test": false
+         },
+         "item": [
+            {
+               "item-num": "100",
+               "material": "ENHEFG1-02",
+               "plant": "3010",
+               "target-qty": "123",
+               "description": "TEST123",
+               "cust-purchase-order": "1234567891",
+               "cust-purchase-date": "20160202",
+               "pricing-grp": "01",
+               "cust-grp": "01",
+               "incoterms1": "CFR",
+               "incoterms2": "CHN",
+               "payment-term": "0001",
+               "payment-method": "C",
+               "uom": "EA",
+               "rejection-reason": "XXXX",
+			   "free": false,
+			   "customer-order": {
+					"num": "1234567891",
+					"date": "20160202",
+					"item-num": "10"
+				},
+			   "delivery-schedule": [
+				{	
+					"req-date": "20180102",
+					"req-qty": "2"
+				},
+				{	
+					"req-date": "20180102",
+					"req-qty": "690"
+				}
+			   ],
+			   "pricing":{
+					"shipping": "100",
+					"handling": "5",
+					"shipping-tax": "4",
+					"handling-tax": "6",
+					"base-price": "3000",
+					"discount-value": "90",
+					"discount-percent": "6",
+					"cv-total": "3000",
+					"qv-total": "2000",
+					"tax": "3"			   
+			   }
+            },
+            {
+               "item-num": "200",
+               "material": "ENHEFG1-02",
+               "plant": "3010",
+               "target-qty": "123",
+               "description": "TEST123",
+               "pricing-grp": "01",
+               "cust-grp": "01",
+               "incoterms1": "CFR",
+               "incoterms2": "CHN",
+               "payment-term": "0001",
+               "payment-method": "C",
+               "uom": "EA",
+               "rejection-reason": "XXXX",
+			   "customer-order": {
+					"num": "1234567891",
+					"date": "20160202",
+					"item-num": "20"
+				},
+			   "pricing":{
+					"shipping": "100",
+					"handling": "5",
+					"shipping-tax": "4",
+					"handling-tax": "6",
+					"base-price": "3000",
+					"discount-value": "90",
+					"discount-percent": "6",
+					"cv-total": "3000",
+					"qv-total": "2000",
+					"tax": "3"			   
+			   }
+            }
+         ],
+		 
+		 "sold-to": {
+			"cust-num": "219999999",
+			"name-1": "WH COLLINS LIMITED",
+			"name-2": "DIMSEY",
+			"street": "APT C MARBLEHEAD CT",
+			"street2": "APT C MARBLEHEAD CT",
+			"country": "US",
+			"country-code": "US",
+			"postal-code": "41211",
+			"city": "COLUMBUS",
+			"region": "OH",
+			"telephone": "6146487669",
+			"tax-jurisdiction-code": "123456789",
+            "e-mail-address": "XYZ@GMAIL.COM",
+            "lang": "EN"
+		  },
+		 "ship-to": {
+			"cust-num": "219999999",
+			"name-1": "WH COLLINS LIMITED",
+			"name-2": "DIMSEY",
+			"street": "APT C MARBLEHEAD CT",
+			"street2": "APT C MARBLEHEAD CT",
+			"country": "US",
+			"country-code": "US",
+			"postal-code": "41211",
+			"city": "COLUMBUS",
+			"region": "OH",
+			"telephone": "6146487669",
+			"tax-jurisdiction-code": "123456789",
+            "e-mail-address": "XYZ@GMAIL.COM",
+            "lang": "EN"
+		  },
+		 "bill-to": {
+			"cust-num": "219999999",
+			"name-1": "WH COLLINS LIMITED",
+			"name-2": "DIMSEY",
+			"street": "APT C MARBLEHEAD CT",
+			"street2": "APT C MARBLEHEAD CT",
+			"country": "US",
+			"country-code": "US",
+			"postal-code": "41211",
+			"city": "COLUMBUS",
+			"region": "OH",
+			"telephone": "6146487669",
+			"tax-jurisdiction-code": "123456789",
+            "e-mail-address": "XYZ@GMAIL.COM",
+            "lang": "EN"
+		  },
+		 "payer": {
+			"cust-num": "219999999",
+			"name-1": "WH COLLINS LIMITED",
+			"name-2": "DIMSEY",
+			"street": "APT C MARBLEHEAD CT",
+			"street2": "APT C MARBLEHEAD CT",
+			"country": "US",
+			"country-code": "US",
+			"postal-code": "41211",
+			"city": "COLUMBUS",
+			"region": "OH",
+			"telephone": "6146487669",
+			"tax-jurisdiction-code": "123456789",
+            "e-mail-address": "XYZ@GMAIL.COM",
+            "lang": "EN"
+		  },
+		  
+		 "sponsor": {
+			"cust-num": "219999999",
+			"name-1": "WH COLLINS LIMITED",
+			"name-2": "DIMSEY",
+			"street": "APT C MARBLEHEAD CT",
+			"street2": "APT C MARBLEHEAD CT",
+			"country": "US",
+			"country-code": "US",
+			"postal-code": "41211",
+			"city": "COLUMBUS",
+			"region": "OH",
+			"telephone": "6146487669",
+			"tax-jurisdiction-code": "123456789",
+            "e-mail-address": "XYZ@GMAIL.COM",
+            "lang": "EN"
+		  },
+         "card": {
+            "type": "VISA",
+            "num": "474747******4747",
+            "name": "Aumji Bhaumji",
+            "valid-upto": "20251031",
+            "auth-flag": true,
+            "autherized-amt": "150.0000",
+            "currency": "AUD",
+            "autherization-date": "20180215",
+            "autherization-number": "831000",
+            "autherization-ref": "518653166839693",
+            "auth-check-resp": "A",
+            "status": "C",
+            "auth-type": "A"
+         }
+    }
+}

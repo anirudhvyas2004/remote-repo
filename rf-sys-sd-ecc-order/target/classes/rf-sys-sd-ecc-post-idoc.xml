@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata"
+	xmlns:sap="http://www.mulesoft.org/schema/mule/sap"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/sap http://www.mulesoft.org/schema/mule/sap/current/mule-sap.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <sub-flow name="rf-sys-sd-ecc-post-idoc-sub-flow">
+        <flow-ref name="json-to-idoc-mapping" doc:name="json-to-idoc-mapping"/>
+        <flow-ref name="rf-sys-sd-sapecc-order-post-idoc" doc:name="rf-sys-sd-sapecc-order-post-idoc"/>
+        
+    </sub-flow>
+    
+        <sub-flow name="rf-sys-sd-sapecc-order-post-idoc">
+        <sap:outbound-endpoint connector-ref="SAP_Config" type="idoc" functionName="SALESORDER_CREATEFROMDAT202" rfcType="trfc" outputXml="true" responseTimeout="10000" doc:name=""/>
+    </sub-flow>
+    <sub-flow name="json-to-idoc-mapping">
+        <dw:transform-message metadata:id="367decf6-d256-4102-b0e6-516aab932cf6" doc:name="order-json-to-idoc-transformer">
+            <dw:input-payload doc:sample="sample_data\json.json" />
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+---
+{
+	SALESORDER_CREATEFROMDAT202: {
+		IDOC @(BEGIN: "1"): {
+			EDI_DC40 @(SEGMENT: "1"): {
+				IDOCTYP: payload.idoc-control.idoc-type,
+				MESTYP: payload.idoc-control.message-type,
+				SNDPOR: payload.idoc-control.sender-partner.port,
+				SNDPRT: payload.idoc-control.sender-partner.type,
+				SNDPRN: payload.idoc-control.sender-partner.number,
+				RCVPOR: payload.idoc-control.receiver-partner.port,
+				RCVPRT: payload.idoc-control.receiver-partner.type,
+				RCVPRN: payload.idoc-control.receiver-partner.number
+			},
+			E1SALESORDER_CREATEFROMDAT2 @(SEGMENT: "1"): {
+				(SALESDOCUMENTIN: payload.order.sales-ord-num) when payload.order.sales-ord-num != null,
+				E1BPSDHD1 @(SEGMENT: "1"): {
+					REFOBJKEY: payload.order.header.obj-key as :string,
+					SALES_ORG: payload.order.header.sales-org,
+					DISTR_CHAN: payload.order.header.distribution-channel,
+					DIVISION: payload.order.header.division,
+					DOC_TYPE: payload.order.header.order-type,
+					REQ_DATE_H: payload.order.header.required-date,
+					(ORD_REASON: payload.order.header.reason) when payload.order.header.reason != null,
+					PRICE_DATE: payload.order.header.price-date,
+					DOC_DATE: payload.order.header.doc-date,
+					REFDOC_CAT: payload.order.header.ref-ord-cat,
+					PYMT_METH: "C",
+					CURRENCY: payload.order.header.currency,
+					REF_DOC: payload.order.header.ref-order
+				},
+				(E1BPPARNR @(SEGMENT: "1"): {
+					PARTN_ROLE: "AG",
+					(PARTN_NUMB: payload.order.sold-to.cust-num) when payload.order.sold-to.cust-num != null,
+					(NAME: payload.order.sold-to.name-1) when payload.order.sold-to.name-1 !=null,
+					(NAME_2: payload.order.sold-to.name-2) when payload.order.sold-to.name-2 !=null,
+					(COUNTRY: payload.order.sold-to.country) when payload.order.sold-to.country !=null,
+					(COUNTR_ISO: payload.order.sold-to.country-code) when payload.order.sold-to.country-code !=null,
+					(POSTL_CODE: payload.order.sold-to.postal-code) when payload.order.sold-to.postal-code !=null,
+					(CITY: payload.order.sold-to.city) when payload.order.sold-to.city !=null,
+					(REGION: payload.order.sold-to.region) when payload.order.sold-to.region !=null,
+					(LANGU_ISO: payload.order.sold-to.lang) when payload.order.sold-to.lang !=null
+					}) when payload.order.sold-to != null,
+				(E1BPPARNR @(SEGMENT: "1"): {
+					PARTN_ROLE: "WE",
+					(PARTN_NUMB: payload.order.ship-to.cust-num) when payload.order.ship-to.cust-num != null,
+					(NAME: payload.order.ship-to.name-1) when payload.order.ship-to.name-1 !=null,
+					(NAME_2: payload.order.ship-to.name-2) when payload.order.ship-to.name-2 !=null,
+					(COUNTRY: payload.order.ship-to.country) when payload.order.ship-to.country !=null,
+					(COUNTR_ISO: payload.order.ship-to.country-code) when payload.order.ship-to.country-code !=null,
+					(POSTL_CODE: payload.order.ship-to.postal-code) when payload.order.ship-to.postal-code !=null,
+					(CITY: payload.order.ship-to.city) when payload.order.ship-to.city !=null,
+					(REGION: payload.order.ship-to.region) when payload.order.ship-to.region !=null,
+					(LANGU_ISO: payload.order.ship-to.lang) when payload.order.ship-to.lang !=null
+				}) when payload.order.ship-to != null,
+				(E1BPPARNR @(SEGMENT: "1"): {
+					PARTN_ROLE: "RE",
+					(PARTN_NUMB: payload.order.bill-to.cust-num) when payload.order.bill-to.cust-num != null,
+					(NAME: payload.order.bill-to.name-1) when payload.order.bill-to.name-1 !=null,
+					(NAME_2: payload.order.bill-to.name-2) when payload.order.bill-to.name-2 !=null,
+					(COUNTRY: payload.order.bill-to.country) when payload.order.bill-to.country !=null,
+					(COUNTR_ISO: payload.order.bill-to.country-code) when payload.order.bill-to.country-code !=null,
+					(POSTL_CODE: payload.order.bill-to.postal-code) when payload.order.bill-to.postal-code !=null,
+					(CITY: payload.order.bill-to.city) when payload.order.bill-to.city !=null,
+					(REGION: payload.order.bill-to.region) when payload.order.bill-to.region !=null,
+					(LANGU_ISO: payload.order.bill-to.lang) when payload.order.bill-to.lang !=null
+				}) when payload.order.bill-to != null,
+				(E1BPPARNR @(SEGMENT: "1"): {
+					PARTN_ROLE: "RG",
+					(PARTN_NUMB: payload.order.payer.cust-num) when payload.order.payer.cust-num != null,
+					(NAME: payload.order.payer.name-1) when payload.order.payer.name-1 !=null,
+					(NAME_2: payload.order.payer.name-2) when payload.order.payer.name-2 !=null,
+					(COUNTRY: payload.order.payer.country) when payload.order.payer.country !=null,
+					(COUNTR_ISO: payload.order.payer.country-code) when payload.order.payer.country-code !=null,
+					(POSTL_CODE: payload.order.payer.postal-code) when payload.order.payer.postal-code !=null,
+					(CITY: payload.order.payer.city) when payload.order.payer.city !=null,
+					(REGION: payload.order.payer.region) when payload.order.payer.region !=null,
+					(LANGU_ISO: payload.order.payer.lang) when payload.order.payer.lang !=null
+				}) when payload.order.payer != null,
+				(E1BPPARNR @(SEGMENT: "1"): {
+					PARTN_ROLE: "ZI",
+					(PARTN_NUMB: payload.order.sponsor.cust-num) when payload.order.sponsor.cust-num != null,
+					(NAME: payload.order.sponsor.name-1) when payload.order.sponsor.name-1 !=null,
+					(NAME_2: payload.order.sponsor.name-2) when payload.order.sponsor.name-2 !=null,
+					(COUNTRY: payload.order.sponsor.country) when payload.order.sponsor.country !=null,
+					(COUNTR_ISO: payload.order.sponsor.country-code) when payload.order.sponsor.country-code !=null,
+					(POSTL_CODE: payload.order.sponsor.postal-code) when payload.order.sponsor.postal-code !=null,
+					(CITY: payload.order.sponsor.city) when payload.order.sponsor.city !=null,
+					(REGION: payload.order.sponsor.region) when payload.order.sponsor.region !=null,
+					(LANGU_ISO: payload.order.sponsor.lang) when payload.order.sponsor.lang !=null
+				}) when payload.order.sponsor != null,
+				E1BPCCARD @(SEGMENT: "1"): {
+					CC_TYPE: payload.order.card.type,
+					CC_NUMBER: payload.order.card.num,
+					CC_VALID_T: payload.order.card.valid-upto,
+					CC_NAME: payload.order.card.name,
+					(AUTH_FLAG: "X") when payload.order.card.auth-flag,
+					AUTHAMOUNT: payload.order.card.autherized-amt,
+					CURRENCY: payload.order.card.currency,
+					CURR_ISO: payload.order.card.currency,
+					AUTH_DATE: payload.order.card.autherization-date,
+					AUTH_CC_NO: payload.order.card.autherization-number,
+					AUTH_REFNO: payload.order.card.autherization-ref,
+					AUTHORTYPE: payload.order.card.auth-type,
+					CC_REACT: payload.order.card.auth-check-resp,
+					CC_STAT_EX: payload.order.card.status
+					
+				},
+				(payload.order.item map ((item , indexOfItem) -> {
+					E1BPSDITM @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						MATERIAL: item.material,
+						(PLANT: item.plant) when item.plant != null ,
+						(TARGET_QTY: item.target-qty) when item.target-qty != null
+					},
+					(item.delivery-schedule default [] map ((delv , indexOfDelv) -> 
+					E1BPSCHDL @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						REQ_DATE: delv.req-date,
+						REQ_QTY: delv.req-qty
+					})),
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "PR00",
+						COND_VALUE: item.pricing.base-price,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.base-price != null,
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "RA00",
+						COND_VALUE: item.pricing.discount-percent,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.discount-percent != null,
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "RB00",
+						COND_VALUE: item.pricing.discount-value,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.discount-value != null,
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "YVCV",
+						COND_VALUE: item.pricing.cv-total,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.cv-total != null,
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "YVQC",
+						COND_VALUE: item.pricing.qv-total,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.qv-total != null,
+					(E1BPCOND @(SEGMENT: "1"): {
+						ITM_NUMBER: item.item-num,
+						COND_TYPE: "YG04",
+						COND_VALUE: item.pricing.restocking-fee,
+						CURRENCY: payload.order.header.currency
+					}) when item.pricing.restocking-fee != null
+				}))
+			}
+		}
+	}
+}]]></dw:set-payload>
+        </dw:transform-message>
+    </sub-flow>
+    
+</mule>

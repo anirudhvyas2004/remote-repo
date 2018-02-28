@@ -1,0 +1,41 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "response": {
+      "$id": "/properties/response",
+      "type": "object",
+      "properties": {
+        "message": {
+          "$id": "/properties/response/properties/message",
+          "type": "string",
+          "title": "The Message Schema",
+          "default": "",
+          "examples": [
+            "Order could not be posted"
+          ]
+        },
+        "error": {
+          "$id": "/properties/response/properties/error",
+          "type": "string",
+          "title": "The Error Schema",
+          "default": "",
+          "examples": [
+            "error message"
+          ]
+        },
+        "error-desc": {
+          "$id": "/properties/response/properties/error-desc",
+          "type": "string",
+          "title": "The Error-desc Schema",
+          "default": "",
+          "examples": [
+            "error details"
+          ]
+        }
+      }
+    }
+  }
+}

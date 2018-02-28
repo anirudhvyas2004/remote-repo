@@ -1,0 +1,1049 @@
+#%RAML 1.0 Library
+types:
+  ############################################################
+  # ISO 4217 Currency Code 
+  ############################################################
+  currencyCodes:
+      enum:  [ 
+      "AFN",#Afghani
+      "EUR",#Euro
+      "ALL",#Lek
+      "DZD",#Algerian Dinar
+      "USD",#US Dollar
+      "EUR",#Euro
+      "AOA",#Kwanza
+      "XCD",#East Caribbean Dollar
+      "ARS",#Argentine Peso
+      "AMD",#Armenian Dram
+      "AWG",#Aruban Florin
+      "AUD",#Australian Dollar
+      "EUR",#Euro
+      "AZN",#Azerbaijan Manat
+      "BSD",#Bahamian Dollar
+      "BHD",#Bahraini Dinar
+      "BDT",#Taka
+      "BBD",#Barbados Dollar
+      "BYN",#Belarusian Ruble
+      "EUR",#Euro
+      "BZD",#Belize Dollar
+      "XOF",#CFA Franc BCEAO
+      "BMD",#Bermudian Dollar
+      "INR",#Indian Rupee
+      "BTN",#Ngultrum
+      "BOB",#Boliviano
+      "BOV",#Mvdol
+      "USD",#US Dollar
+      "BAM",#Convertible Mark
+      "BWP",#Pula
+      "NOK",#Norwegian Krone
+      "BRL",#Brazilian Real
+      "USD",#US Dollar
+      "BND",#Brunei Dollar
+      "BGN",#Bulgarian Lev
+      "XOF",#CFA Franc BCEAO
+      "BIF",#Burundi Franc
+      "CVE",#Cabo Verde Escudo
+      "KHR",#Riel
+      "XAF",#CFA Franc BEAC
+      "CAD",#Canadian Dollar
+      "KYD",#Cayman Islands Dollar
+      "XAF",#CFA Franc BEAC
+      "XAF",#CFA Franc BEAC
+      "CLP",#Chilean Peso
+      "CLF",#Unidad de Fomento
+      "CNY",#Yuan Renminbi
+      "AUD",#Australian Dollar
+      "AUD",#Australian Dollar
+      "COP",#Colombian Peso
+      "COU",#Unidad de Valor Real
+      "KMF",#Comorian Franc 
+      "CDF",#Congolese Franc
+      "XAF",#CFA Franc BEAC
+      "NZD",#New Zealand Dollar
+      "CRC",#Costa Rican Colon
+      "XOF",#CFA Franc BCEAO
+      "HRK",#Kuna
+      "CUP",#Cuban Peso
+      "CUC",#Peso Convertible
+      "ANG",#Netherlands Antillean Guilder
+      "EUR",#Euro
+      "CZK",#Czech Koruna
+      "DKK",#Danish Krone
+      "DJF",#Djibouti Franc
+      "XCD",#East Caribbean Dollar
+      "DOP",#Dominican Peso
+      "USD",#US Dollar
+      "EGP",#Egyptian Pound
+      "SVC",#El Salvador Colon
+      "USD",#US Dollar
+      "XAF",#CFA Franc BEAC
+      "ERN",#Nakfa
+      "EUR",#Euro
+      "ETB",#Ethiopian Birr
+      "EUR",#Euro
+      "FKP",#Falkland Islands Pound
+      "DKK",#Danish Krone
+      "FJD",#Fiji Dollar
+      "EUR",#Euro
+      "EUR",#Euro
+      "EUR",#Euro
+      "XPF",#CFP Franc
+      "EUR",#Euro
+      "XAF",#CFA Franc BEAC
+      "GMD",#Dalasi
+      "GEL",#Lari
+      "EUR",#Euro
+      "GHS",#Ghana Cedi
+      "GIP",#Gibraltar Pound
+      "EUR",#Euro
+      "DKK",#Danish Krone
+      "XCD",#East Caribbean Dollar
+      "EUR",#Euro
+      "USD",#US Dollar
+      "GTQ",#Quetzal
+      "GBP",#Pound Sterling
+      "GNF",#Guinean Franc
+      "XOF",#CFA Franc BCEAO
+      "GYD",#Guyana Dollar
+      "HTG",#Gourde
+      "USD",#US Dollar
+      "AUD",#Australian Dollar
+      "EUR",#Euro
+      "HNL",#Lempira
+      "HKD",#Hong Kong Dollar
+      "HUF",#Forint
+      "ISK",#Iceland Krona
+      "INR",#Indian Rupee
+      "IDR",#Rupiah
+      "XDR",#SDR (Special Drawing Right)
+      "IRR",#Iranian Rial
+      "IQD",#Iraqi Dinar
+      "EUR",#Euro
+      "GBP",#Pound Sterling
+      "ILS",#New Israeli Sheqel
+      "EUR",#Euro
+      "JMD",#Jamaican Dollar
+      "JPY",#Yen
+      "GBP",#Pound Sterling
+      "JOD",#Jordanian Dinar
+      "KZT",#Tenge
+      "KES",#Kenyan Shilling
+      "AUD",#Australian Dollar
+      "KPW",#North Korean Won
+      "KRW",#Won
+      "KWD",#Kuwaiti Dinar
+      "KGS",#Som
+      "LAK",#Lao Kip
+      "EUR",#Euro
+      "LBP",#Lebanese Pound
+      "LSL",#Loti
+      "ZAR",#Rand
+      "LRD",#Liberian Dollar
+      "LYD",#Libyan Dinar
+      "CHF",#Swiss Franc
+      "EUR",#Euro
+      "EUR",#Euro
+      "MOP",#Pataca
+      "MKD",#Denar
+      "MGA",#Malagasy Ariary
+      "MWK",#Malawi Kwacha
+      "MYR",#Malaysian Ringgit
+      "MVR",#Rufiyaa
+      "XOF",#CFA Franc BCEAO
+      "EUR",#Euro
+      "USD",#US Dollar
+      "EUR",#Euro
+      "MRO",#Ouguiya
+      "MUR",#Mauritius Rupee
+      "EUR",#Euro
+      "XUA",#ADB Unit of Account
+      "MXN",#Mexican Peso
+      "MXV",#Mexican Unidad de Inversion (UDI)
+      "USD",#US Dollar
+      "MDL",#Moldovan Leu
+      "EUR",#Euro
+      "MNT",#Tugrik
+      "EUR",#Euro
+      "XCD",#East Caribbean Dollar
+      "MAD",#Moroccan Dirham
+      "MZN",#Mozambique Metical
+      "MMK",#Kyat
+      "NAD",#Namibia Dollar
+      "ZAR",#Rand
+      "AUD",#Australian Dollar
+      "NPR",#Nepalese Rupee
+      "EUR",#Euro
+      "XPF",#CFP Franc
+      "NZD",#New Zealand Dollar
+      "NIO",#Cordoba Oro
+      "XOF",#CFA Franc BCEAO
+      "NGN",#Naira
+      "NZD",#New Zealand Dollar
+      "AUD",#Australian Dollar
+      "USD",#US Dollar
+      "NOK",#Norwegian Krone
+      "OMR",#Rial Omani
+      "PKR",#Pakistan Rupee
+      "USD",#US Dollar    
+      "PAB",#Balboa
+      "USD",#US Dollar
+      "PGK",#Kina
+      "PYG",#Guarani
+      "PEN",#Sol
+      "PHP",#Philippine Peso
+      "NZD",#New Zealand Dollar
+      "PLN",#Zloty
+      "EUR",#Euro
+      "USD",#US Dollar
+      "QAR",#Qatari Rial
+      "EUR",#Euro
+      "RON",#Romanian Leu
+      "RUB",#Russian Ruble
+      "RWF",#Rwanda Franc
+      "EUR",#Euro
+      "SHP",#Saint Helena Pound
+      "XCD",#East Caribbean Dollar
+      "XCD",#East Caribbean Dollar
+      "EUR",#Euro
+      "EUR",#Euro
+      "XCD",#East Caribbean Dollar
+      "WST",#Tala
+      "EUR",#Euro
+      "STD",#Dobra
+      "SAR",#Saudi Riyal
+      "XOF",#CFA Franc BCEAO
+      "RSD",#Serbian Dinar
+      "SCR",#Seychelles Rupee
+      "SLL",#Leone
+      "SGD",#Singapore Dollar
+      "ANG",#Netherlands Antillean Guilder
+      "XSU",#Sucre
+      "EUR",#Euro
+      "EUR",#Euro
+      "SBD",#Solomon Islands Dollar
+      "SOS",#Somali Shilling
+      "ZAR",#Rand    
+      "SSP",#South Sudanese Pound
+      "EUR",#Euro
+      "LKR",#Sri Lanka Rupee
+      "SDG",#Sudanese Pound
+      "SRD",#Surinam Dollar
+      "NOK",#Norwegian Krone
+      "SZL",#Lilangeni
+      "SEK",#Swedish Krona
+      "CHF",#Swiss Franc
+      "CHE",#WIR Euro
+      "CHW",#WIR Franc
+      "SYP",#Syrian Pound
+      "TWD",#New Taiwan Dollar
+      "TJS",#Somoni
+      "TZS",#Tanzanian Shilling
+      "THB",#Baht
+      "USD",#US Dollar
+      "XOF",#CFA Franc BCEAO
+      "NZD",#New Zealand Dollar
+      "TOP",#PaÃ¢â‚¬â„¢anga
+      "TTD",#Trinidad and Tobago Dollar
+      "TND",#Tunisian Dinar
+      "TRY",#Turkish Lira
+      "TMT",#Turkmenistan New Manat
+      "USD",#US Dollar
+      "AUD",#Australian Dollar
+      "UGX",#Uganda Shilling
+      "UAH",#Hryvnia
+      "AED",#UAE Dirham
+      "GBP",#Pound Sterling
+      "USD",#US Dollar
+      "USD",#US Dollar
+      "USN",#US Dollar (Next day)
+      "UYU",#Peso Uruguayo
+      "UYI",#Uruguay Peso en Unidades Indexadas (URUIURUI)
+      "UZS",#Uzbekistan Sum
+      "VUV",#Vatu
+      "VEF",#BolÃƒÂ­var
+      "VND",#Dong
+      "USD",#US Dollar
+      "USD",#US Dollar
+      "XPF",#CFP Franc
+      "MAD",#Moroccan Dirham
+      "YER",#Yemeni Rial
+      "ZMW",#Zambian Kwacha
+      "ZWL",#Zimbabwe Dollar
+      "XBA",#Bond Markets Unit European Composite Unit (EURCO)
+      "XBB",#Bond Markets Unit European Monetary Unit (E.M.U.-6)
+      "XBC",#Bond Markets Unit European Unit of Account 9 (E.U.A.-9)
+      "XBD",#Bond Markets Unit European Unit of Account 17 (E.U.A.-17)
+      "XTS",#Codes specifically reserved for testing purposes
+      "XXX",#The codes assigned for transactions where no currency is involved
+      "XAU",#Gold
+      "XPD",#Palladium
+      "XPT",#Platinum
+      "XAG",#Silver
+      ]
+      
+  priceGroup:
+    enum:  ["01", "02" , "03"]
+
+  ############################################################
+  # ISO 3-ALPHA Country Code 
+  ############################################################
+  countryCodes-3:
+      enum:  [ 
+        "AFG",
+        "ALA",
+        "ALB",
+        "DZA",
+        "ASM",
+        "AND",
+        "AGO",
+        "AIA",
+        "ATA",
+        "ATG",
+        "ARG",
+        "ARM",
+        "ABW",
+        "AUS",
+        "AUT",
+        "AZE",
+        "BHS",
+        "BHR",
+        "BGD",
+        "BRB",
+        "BLR",
+        "BEL",
+        "BLZ",
+        "BEN",
+        "BMU",
+        "BTN",
+        "BOL",
+        "BIH",
+        "BWA",
+        "BVT",
+        "BRA",
+        "VGB",
+        "IOT",
+        "BRN",
+        "BGR",
+        "BFA",
+        "BDI",
+        "KHM",
+        "CMR",
+        "CAN",
+        "CPV",
+        "CYM",
+        "CAF",
+        "TCD",
+        "CHL",
+        "CHN",
+        "HKG",
+        "MAC",
+        "CXR",
+        "CCK",
+        "COL",
+        "COM",
+        "COG",
+        "COD",
+        "COK",
+        "CRI",
+        "CIV",
+        "HRV",
+        "CUB",
+        "CYP",
+        "CZE",
+        "DNK",
+        "DJI",
+        "DMA",
+        "DOM",
+        "ECU",
+        "EGY",
+        "SLV",
+        "GNQ",
+        "ERI",
+        "EST",
+        "ETH",
+        "FLK",
+        "FRO",
+        "FJI",
+        "FIN",
+        "FRA",
+        "GUF",
+        "PYF",
+        "ATF",
+        "GAB",
+        "GMB",
+        "GEO",
+        "DEU",
+        "GHA",
+        "GIB",
+        "GRC",
+        "GRL",
+        "GRD",
+        "GLP",
+        "GUM",
+        "GTM",
+        "GGY",
+        "GIN",
+        "GNB",
+        "GUY",
+        "HTI",
+        "HMD",
+        "VAT",
+        "HND",
+        "HUN",
+        "ISL",
+        "IND",
+        "IDN",
+        "IRN",
+        "IRQ",
+        "IRL",
+        "IMN",
+        "ISR",
+        "ITA",
+        "JAM",
+        "JPN",
+        "JEY",
+        "JOR",
+        "KAZ",
+        "KEN",
+        "KIR",
+        "PRK",
+        "KOR",
+        "KWT",
+        "KGZ",
+        "LAO",
+        "LVA",
+        "LBN",
+        "LSO",
+        "LBR",
+        "LBY",
+        "LIE",
+        "LTU",
+        "LUX",
+        "MKD",
+        "MDG",
+        "MWI",
+        "MYS",
+        "MDV",
+        "MLI",
+        "MLT",
+        "MHL",
+        "MTQ",
+        "MRT",
+        "MUS",
+        "MYT",
+        "MEX",
+        "FSM",
+        "MDA",
+        "MCO",
+        "MNG",
+        "MNE",
+        "MSR",
+        "MAR",
+        "MOZ",
+        "MMR",
+        "NAM",
+        "NRU",
+        "NPL",
+        "NLD",
+        "ANT",
+        "NCL",
+        "NZL",
+        "NIC",
+        "NER",
+        "NGA",
+        "NIU",
+        "NFK",
+        "MNP",
+        "NOR",
+        "OMN",
+        "PAK",
+        "PLW",
+        "PSE",
+        "PAN",
+        "PNG",
+        "PRY",
+        "PER",
+        "PHL",
+        "PCN",
+        "POL",
+        "PRT",
+        "PRI",
+        "QAT",
+        "REU",
+        "ROU",
+        "RUS",
+        "RWA",
+        "BLM",
+        "SHN",
+        "KNA",
+        "LCA",
+        "MAF",
+        "SPM",
+        "VCT",
+        "WSM",
+        "SMR",
+        "STP",
+        "SAU",
+        "SEN",
+        "SRB",
+        "SYC",
+        "SLE",
+        "SGP",
+        "SVK",
+        "SVN",
+        "SLB",
+        "SOM",
+        "ZAF",
+        "SGS",
+        "SSD",
+        "ESP",
+        "LKA",
+        "SDN",
+        "SUR",
+        "SJM",
+        "SWZ",
+        "SWE",
+        "CHE",
+        "SYR",
+        "TWN",
+        "TJK",
+        "TZA",
+        "THA",
+        "TLS",
+        "TGO",
+        "TKL",
+        "TON",
+        "TTO",
+        "TUN",
+        "TUR",
+        "TKM",
+        "TCA",
+        "TUV",
+        "UGA",
+        "UKR",
+        "ARE",
+        "GBR",
+        "USA",
+        "UMI",
+        "URY",
+        "UZB",
+        "VUT",
+        "VEN",
+        "VNM",
+        "VIR",
+        "WLF",
+        "ESH",
+        "YEM",
+        "ZMB",
+        "ZWE"
+
+      ]
+
+
+  ############################################################
+  # ISO 2-ALPHA Country Code 
+  ############################################################
+  countryCodes-2:
+      enum:  [ 
+        "AF",
+        "AX",
+        "AL",
+        "DZ",
+        "AS",
+        "AD",
+        "AO",
+        "AI",
+        "AQ",
+        "AG",
+        "AR",
+        "AM",
+        "AW",
+        "AU",
+        "AT",
+        "AZ",
+        "BS",
+        "BH",
+        "BD",
+        "BB",
+        "BY",
+        "BE",
+        "BZ",
+        "BJ",
+        "BM",
+        "BT",
+        "BO",
+        "BA",
+        "BW",
+        "BV",
+        "BR",
+        "VG",
+        "IO",
+        "BN",
+        "BG",
+        "BF",
+        "BI",
+        "KH",
+        "CM",
+        "CA",
+        "CV",
+        "KY",
+        "CF",
+        "TD",
+        "CL",
+        "CN",
+        "HK",
+        "MO",
+        "CX",
+        "CC",
+        "CO",
+        "KM",
+        "CG",
+        "CD",
+        "CK",
+        "CR",
+        "CI",
+        "HR",
+        "CU",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "DM",
+        "DO",
+        "EC",
+        "EG",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FK",
+        "FO",
+        "FJ",
+        "FI",
+        "FR",
+        "GF",
+        "PF",
+        "TF",
+        "GA",
+        "GM",
+        "GE",
+        "DE",
+        "GH",
+        "GI",
+        "GR",
+        "GL",
+        "GD",
+        "GP",
+        "GU",
+        "GT",
+        "GG",
+        "GN",
+        "GW",
+        "GY",
+        "HT",
+        "HM",
+        "VA",
+        "HN",
+        "HU",
+        "IS",
+        "IN",
+        "ID",
+        "IR",
+        "IQ",
+        "IE",
+        "IM",
+        "IL",
+        "IT",
+        "JM",
+        "JP",
+        "JE",
+        "JO",
+        "KZ",
+        "KE",
+        "KI",
+        "KP",
+        "KR",
+        "KW",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LS",
+        "LR",
+        "LY",
+        "LI",
+        "LT",
+        "LU",
+        "MK",
+        "MG",
+        "MW",
+        "MY",
+        "MV",
+        "ML",
+        "MT",
+        "MH",
+        "MQ",
+        "MR",
+        "MU",
+        "YT",
+        "MX",
+        "FM",
+        "MD",
+        "MC",
+        "MN",
+        "ME",
+        "MS",
+        "MA",
+        "MZ",
+        "MM",
+        "NA",
+        "NR",
+        "NP",
+        "NL",
+        "AN",
+        "NC",
+        "NZ",
+        "NI",
+        "NE",
+        "NG",
+        "NU",
+        "NF",
+        "MP",
+        "NO",
+        "OM",
+        "PK",
+        "PW",
+        "PS",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PH",
+        "PN",
+        "PL",
+        "PT",
+        "PR",
+        "QA",
+        "RE",
+        "RO",
+        "RU",
+        "RW",
+        "BL",
+        "SH",
+        "KN",
+        "LC",
+        "MF",
+        "PM",
+        "VC",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "SN",
+        "RS",
+        "SC",
+        "SL",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "ZA",
+        "GS",
+        "SS",
+        "ES",
+        "LK",
+        "SD",
+        "SR",
+        "SJ",
+        "SZ",
+        "SE",
+        "CH",
+        "SY",
+        "TW",
+        "TJ",
+        "TZ",
+        "TH",
+        "TL",
+        "TG",
+        "TK",
+        "TO",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TC",
+        "TV",
+        "UG",
+        "UA",
+        "AE",
+        "GB",
+        "US",
+        "UM",
+        "UY",
+        "UZ",
+        "VU",
+        "VE",
+        "VN",
+        "VI",
+        "WF",
+        "EH",
+        "YE",
+        "ZM",
+        "ZW"
+
+      ]
+
+  ############################################################
+  # ISO 639-1 Country Code 
+  ############################################################
+  languageCodes-2:
+      enum:  [ 
+        "AB",
+        "AA",
+        "AF",
+        "AK",
+        "SQ",
+        "AM",
+        "AR",
+        "AN",
+        "HY",
+        "AS",
+        "AV",
+        "AE",
+        "AY",
+        "AZ",
+        "BM",
+        "BA",
+        "EU",
+        "BE",
+        "BN",
+        "BH",
+        "BI",
+        "BS",
+        "BR",
+        "BG",
+        "MY",
+        "CA",
+        "CH",
+        "CE",
+        "NY",
+        "ZH",
+        "CV",
+        "KW",
+        "CO",
+        "CR",
+        "HR",
+        "CS",
+        "DA",
+        "DV",
+        "NL",
+        "DZ",
+        "EN",
+        "EO",
+        "ET",
+        "EE",
+        "FO",
+        "FJ",
+        "FI",
+        "FR",
+        "FF",
+        "GL",
+        "GD",
+        "GV",
+        "KA",
+        "DE",
+        "EL",
+        "KL",
+        "GN",
+        "GU",
+        "HT",
+        "HA",
+        "HE",
+        "HZ",
+        "HI",
+        "HO",
+        "HU",
+        "IS",
+        "IO",
+        "IG",
+        "ID", "IN",
+        "IA",
+        "IE",
+        "IU",
+        "IK",
+        "GA",
+        "IT",
+        "JA",
+        "JV",
+        "KL",
+        "KN",
+        "KR",
+        "KS",
+        "KK",
+        "KM",
+        "KI",
+        "RW",
+        "RN",
+        "KY",
+        "KV",
+        "KG",
+        "KO",
+        "KU",
+        "KJ",
+        "LO",
+        "LA",
+        "LV",
+        "LI",
+        "LN",
+        "LT",
+        "LU",
+        "LG",
+        "LB",
+        "GV",
+        "MK",
+        "MG",
+        "MS",
+        "ML",
+        "MT",
+        "MI",
+        "MR",
+        "MH",
+        "MO",
+        "MN",
+        "NA",
+        "NV",
+        "NG",
+        "ND",
+        "NE",
+        "NO",
+        "NB",
+        "NN",
+        "II",
+        "OC",
+        "OJ",
+        "CU",
+        "OR",
+        "OM",
+        "OS",
+        "PI",
+        "PS",
+        "FA",
+        "PL",
+        "PT",
+        "PA",
+        "QU",
+        "RM",
+        "RO",
+        "RU",
+        "SE",
+        "SM",
+        "SG",
+        "SA",
+        "SR",
+        "SH",
+        "ST",
+        "TN",
+        "SN",
+        "II",
+        "SD",
+        "SI",
+        "SS",
+        "SK",
+        "SL",
+        "SO",
+        "NR",
+        "ES",
+        "SU",
+        "SW",
+        "SS",
+        "SV",
+        "TL",
+        "TY",
+        "TG",
+        "TA",
+        "TT",
+        "TE",
+        "TH",
+        "BO",
+        "TI",
+        "TO",
+        "TS",
+        "TR",
+        "TK",
+        "TW",
+        "UG",
+        "UK",
+        "UR",
+        "UZ",
+        "VE",
+        "VI",
+        "VO",
+        "WA",
+        "CY",
+        "WO",
+        "FY",
+        "XH",
+        "YI", "JI",
+        "YO",
+        "ZA",
+        "ZU",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "SN",
+        "RS",
+        "SC",
+        "SL",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "ZA",
+        "GS",
+        "SS",
+        "ES",
+        "LK",
+        "SD",
+        "SR",
+        "SJ",
+        "SZ",
+        "SE",
+        "CH",
+        "SY",
+        "TW",
+        "TJ",
+        "TZ",
+        "TH",
+        "TL",
+        "TG",
+        "TK",
+        "TO",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TC",
+        "TV",
+        "UG",
+        "UA",
+        "AE",
+        "GB",
+        "US",
+        "UM",
+        "UY",
+        "UZ",
+        "VU",
+        "VE",
+        "VN",
+        "VI",
+        "WF",
+        "EH",
+        "YE",
+        "ZM",
+        "ZW"
+
+      ]

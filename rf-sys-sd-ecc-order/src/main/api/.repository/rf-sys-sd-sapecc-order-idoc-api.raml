@@ -1,0 +1,33 @@
+#%RAML 1.0
+baseUri: https://mocksvc.mulesoft.com/mocks/4d5fb69b-027f-4f0b-8da6-fff6d843c340
+title: rf-sys-sd-sapecc-order
+########version: 0.0.1
+protocols: [ HTTP , HTTPS ]
+mediaType: [ application/json ]  
+/v1:
+  /order:
+    get:
+      description: get order
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include schema/order-schema.json
+              example: !include examples/order-eg.json
+    post:
+      description: Post or Create an Order
+      body: 
+        application/json:
+          schema: !include schema/order-schema.json
+          example: !include examples/order-eg.json
+      responses:
+        201:
+          body:
+            application/json:
+              schema: !include schema/order-schema.json
+              example: !include examples/order-eg.json
+        400:
+          body:
+            application/json:
+              schema: !include schema/error-response-schema.json
+              example: !include examples/error-response.json
